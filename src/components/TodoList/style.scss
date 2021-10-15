@@ -45,3 +45,19 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .todo-list {
+    .title {
+      text-align: center;
+    }
+
+    .list {
+      padding: 0 !important;
+
+      &-item {
+        grid-template-columns: 1.2fr .8fr !important;
+      }
+    }
+  }
+}

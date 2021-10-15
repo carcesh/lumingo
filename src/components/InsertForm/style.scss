@@ -27,3 +27,21 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .insert-form {
+    grid-template-columns: 1fr;
+    grid-auto-flow: dense;
+    grid-row-gap: 20px;
+
+    .input-text {
+      display: flex;
+    }
+
+    .add-button {
+      button {
+        justify-content: center;
+      }
+    }
+  }
+}

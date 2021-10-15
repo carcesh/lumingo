@@ -8,3 +8,14 @@
 .wrap {
   width: 740px;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: auto;
+    padding: 15% 5%;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+}
