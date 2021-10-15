@@ -1,20 +1,22 @@
+const todoList = [
+  {
+    title: 'Pug JS - Inducción Extends Block'
+  },
+  {
+    title: 'Stylus JS'
+  },
+  {
+    title: 'React JS - Inducción Props y States'
+  },
+  {
+    title: 'Vue JS - Inducción LifeCycle'
+  },
+];
+
 exports.getTodoList = () => {
-  return [
-    {
-      id: 1,
-      title: 'Pug JS - Inducción Extends Block'
-    },
-    {
-      id: 2,
-      title: 'Stylus JS'
-    },
-    {
-      id: 3,
-      title: 'React JS - Inducción Props y States'
-    },
-    {
-      id: 4,
-      title: 'Vue JS - Inducción LifeCycle'
-    },
-  ];
+  return todoList;
+}
+
+exports.setTodo = title => {
+  todoList.push({title});
 }

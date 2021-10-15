@@ -17,6 +17,7 @@
     button {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background-color: #1890ff;
       border: 0;
@@ -36,12 +37,6 @@
 
     .input-text {
       display: flex;
-    }
-
-    .add-button {
-      button {
-        justify-content: center;
-      }
     }
   }
 }
