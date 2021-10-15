@@ -1,0 +1,29 @@
+.insert-form {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  grid-gap: 50px;
+  margin-bottom: 20px;
+
+  .input-text {
+    input {
+      border: 1px solid #ebebeb;
+      border-radius: 5px;
+      padding: 10px 15px;
+      width: 100%;
+    }
+  }
+
+  .add-button {
+    button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #1890ff;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 15px;
+      width: 100%;
+    }
+  }
+}

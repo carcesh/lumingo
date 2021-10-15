@@ -1,0 +1,47 @@
+.todo-list {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+
+  .title {
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+  }
+
+  .list {
+    padding: 0 15px;
+
+    &-item {
+      border-bottom: 1px solid #e5e5e5;
+      display: grid;
+      grid-template-columns: 1.6fr .4fr;
+      padding: 20px 15px;
+
+      &:last-child {
+        border: 0;
+      }
+
+      .item-title {
+        display: flex;
+        align-items: center;
+      }
+
+      .item-actions {
+        text-align: right;
+
+        button {
+          background-color: #F5F5F5;
+          border: 0;
+          border-radius: 5px;
+          padding: 10px;
+
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
