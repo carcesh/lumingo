@@ -1,0 +1,82 @@
+$modal-lg-width: 50%;
+$modal-xs-width: 90%;
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+
+  .close {
+    text-align: right;
+    width: $modal-lg-width;
+
+    button {
+      background-color: transparent;
+      border: 0;
+      color: white;
+      font-weight: bold;
+      font-size: 26px;
+      padding: 5px;
+    }
+  }
+
+  .edit-form {
+    display: grid;
+    grid-template-columns: 1.6fr .4fr;
+    grid-gap: 10px;
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .25);
+    padding: 30px;
+    width: $modal-lg-width;
+
+    .input-text {
+      label {
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 7px;
+      }
+    }
+
+    .action-button {
+      display: flex;
+      align-items: flex-end;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #09ba2f;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        padding: 10px 15px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    .close {
+      width: $modal-xs-width;
+    }
+
+    .edit-form {
+      grid-template-columns: 1fr;
+      grid-auto-flow: dense;
+      grid-row-gap: 10px;
+      padding: 20px;
+      width: $modal-xs-width;
+    }
+  }
+}

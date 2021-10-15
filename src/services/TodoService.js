@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { v4: uuidv4 } = require('uuid');
+const {v4: uuidv4} = require('uuid');
 
 let todoList = [
   {
@@ -33,4 +33,9 @@ exports.setTodo = title => {
 
 exports.removeTodo = id => {
   todoList = _.reject(todoList, ['id', id]);
+}
+
+exports.updateTodo = (id, title) => {
+  const index = _.findIndex(todoList, {id});
+  todoList.splice(index, 1, {id, title});
 }
