@@ -33,7 +33,7 @@ function EditForm({item, onEdit, onClose}) {
       id: item.id,
       title: item.title
     });
-  }, []);
+  }, [item.id, item.title]);
 
   return (
     <div className="modal">

@@ -1,18 +1,20 @@
 import {useState} from "react";
 
-import {getTodoList, setTodo, removeTodo, updateTodo} from "./services/TodoService";
+import {getTodoList, setTodo, removeTodo, updateTodo, filterTodo} from "./services/TodoService";
 
 import InsertForm from "./components/InsertForm";
+import EditForm from "./components/EditForm";
+import SearchForm from "./components/SearchForm";
 import TodoList from "./components/TodoList";
 
 import './App.scss';
-import EditForm from "./components/EditForm";
 
 function App() {
   const [title, setTitle] = useState('');
   const [todoList, setTodoList] = useState(getTodoList());
   const [showEdit, setShowEdit] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
+  const [query, setQuery] = useState('');
 
   const handleInsert = () => {
     if (title === '') return false;
@@ -25,10 +27,16 @@ function App() {
   };
 
   const handleUpdate = params => {
+    if (!params.title) return false;
+
     updateTodo(params.id, params.title);
     setTodoList(getTodoList());
     setShowEdit(false);
   };
+
+  const handleSearch = () => {
+    setTodoList(filterTodo(query));
+  }
 
   const openEditForm = item => {
     setCurrentItem(item);
@@ -48,6 +56,10 @@ function App() {
         <InsertForm
           onChange={value => setTitle(value)}
           onClick={() => handleInsert()}
+        />
+        <SearchForm
+          onChange={value => setQuery(value)}
+          onClick={() => handleSearch()}
         />
         <TodoList
           list={todoList}

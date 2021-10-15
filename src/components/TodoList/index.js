@@ -5,7 +5,7 @@ function TodoList({list, onEdit, onDelete}) {
     <div className="todo-list">
       <div className="title">Todo List</div>
       <div className="list">
-        {list.map((item, i) => {
+        {list.length > 0 ? list.map((item, i) => {
           return(
             <div className="list-item" key={i}>
               <div className="item-title">{item.title}</div>
@@ -15,7 +15,7 @@ function TodoList({list, onEdit, onDelete}) {
               </div>
             </div>
           );
-        })}
+        }) : <span>No se encontraron resultados.</span>}
       </div>
     </div>
   );

@@ -39,3 +39,8 @@ exports.updateTodo = (id, title) => {
   const index = _.findIndex(todoList, {id});
   todoList.splice(index, 1, {id, title});
 }
+
+exports.filterTodo = query => {
+  const _todoList = JSON.parse(JSON.stringify(todoList));
+  return _.filter(_todoList, o => o.title.toString().toLowerCase().includes(query.toLowerCase()));
+};
